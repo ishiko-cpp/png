@@ -4,6 +4,9 @@
     See https://github.com/ishiko-cpp/png/blob/main/LICENSE.txt
 */
 
+#include "PNGChunkTests.hpp"
+#include "PNGDatastreamTests.hpp"
+#include "PNGSignatureTests.hpp"
 #include <Ishiko/TestFramework/Core.hpp>
 
 using namespace Ishiko;
@@ -23,6 +26,9 @@ int main(int argc, char* argv[])
         TestHarness theTestHarness("Ishiko/C++ PNG Library Tests", configuration);
 
         TestSequence& theTests = theTestHarness.tests();
+        theTests.append<PNGSignatureTests>();
+        theTests.append<PNGChunkTests>();
+        theTests.append<PNGDatastreamTests>();
 
         return theTestHarness.run();
     }
