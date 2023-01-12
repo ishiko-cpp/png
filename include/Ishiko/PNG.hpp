@@ -7,6 +7,8 @@
 #ifndef GUARD_ISHIKO_CPP_PNG_HPP
 #define GUARD_ISHIKO_CPP_PNG_HPP
 
+#include "PNG/PNGChunk.hpp"
 #include "PNG/PNGDatastream.hpp"
+#include "PNG/PNGSignature.hpp"
 
 #endif
