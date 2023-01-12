@@ -20,8 +20,18 @@ program IshikoPNGTests : IshikoTestFrameworkCore
         libs += fmt boost_filesystem;
     }
 
+    headers
+    {
+        ../../src/PNGChunkTests.hpp
+        ../../src/PNGDatastreamTests.hpp
+        ../../src/PNGSignatureTests.hpp
+    }
+
     sources
     {
         ../../src/main.cpp
+        ../../src/PNGChunkTests.cpp
+        ../../src/PNGDatastreamTests.cpp
+        ../../src/PNGSignatureTests.cpp
     }
 }
