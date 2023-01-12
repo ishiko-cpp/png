@@ -157,6 +157,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\PNGChunkTests.cpp" />
+    <ClCompile Include="..\..\src\PNGDatastreamTests.cpp" />
+    <ClCompile Include="..\..\src\PNGSignatureTests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\PNGChunkTests.hpp" />
+    <ClInclude Include="..\..\src\PNGDatastreamTests.hpp" />
+    <ClInclude Include="..\..\src\PNGSignatureTests.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

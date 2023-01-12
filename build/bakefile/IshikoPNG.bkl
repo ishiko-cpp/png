@@ -31,11 +31,15 @@ library IshikoPNG
     headers
     {
         ../../include/Ishiko/PNG.hpp
+        ../../include/Ishiko/PNG/PNGChunk.hpp
         ../../include/Ishiko/PNG/PNGDatastream.hpp
+        ../../include/Ishiko/PNG/PNGSignature.hpp
     }
 
     sources
     {
+        ../../src/PNGChunk.cpp
         ../../src/PNGDatastream.cpp
+        ../../src/PNGSignature.cpp
     }
 }

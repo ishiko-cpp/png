@@ -150,11 +150,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\PNGChunk.cpp" />
     <ClCompile Include="..\..\src\PNGDatastream.cpp" />
+    <ClCompile Include="..\..\src\PNGSignature.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\Ishiko\PNG.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\PNG\PNGChunk.hpp" />
     <ClInclude Include="..\..\include\Ishiko\PNG\PNGDatastream.hpp" />
+    <ClInclude Include="..\..\include\Ishiko\PNG\PNGSignature.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

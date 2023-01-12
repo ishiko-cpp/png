@@ -56,12 +56,18 @@ $(if $(_builddir_error),$(error Failed to create build directory: $(_builddir_er
 endif
 all: ../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPNG-d,IshikoPNG).a
 
-../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPNG-d,IshikoPNG).a: $(_builddir)IshikoPNG_PNGDatastream.o
-	$(AR) rc $@ $(_builddir)IshikoPNG_PNGDatastream.o
+../bakefile/../../lib/lib$(if $(call _equal,$(config),Debug),IshikoPNG-d,IshikoPNG).a: $(_builddir)IshikoPNG_PNGChunk.o $(_builddir)IshikoPNG_PNGDatastream.o $(_builddir)IshikoPNG_PNGSignature.o
+	$(AR) rc $@ $(_builddir)IshikoPNG_PNGChunk.o $(_builddir)IshikoPNG_PNGDatastream.o $(_builddir)IshikoPNG_PNGSignature.o
 	$(RANLIB) $@
+
+$(_builddir)IshikoPNG_PNGChunk.o: ../../src/PNGChunk.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PNG -std=c++11 ../../src/PNGChunk.cpp
 
 $(_builddir)IshikoPNG_PNGDatastream.o: ../../src/PNGDatastream.cpp
 	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PNG -std=c++11 ../../src/PNGDatastream.cpp
+
+$(_builddir)IshikoPNG_PNGSignature.o: ../../src/PNGSignature.cpp
+	$(CXX) -c -o $@ $(CPPFLAGS) $(CXXFLAGS) -MD -MP -fPIC -DPIC -pthread -I../../include/Ishiko/PNG -std=c++11 ../../src/PNGSignature.cpp
 
 clean:
 	rm -f $(_builddir)*.o
